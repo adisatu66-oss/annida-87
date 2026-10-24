@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fasilitas Sekolah — SMPIT Nurhidayah</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Sacramento&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== SCRAPBOOK BACKGROUND ===== */
+
+        body {
+            background-color: #f8f1e5;
+            background-image:
+                radial-gradient(#d8c8aa 0.7px, transparent 0.7px),
+                linear-gradient(120deg, #fff9f0, #f6eee3);
+            background-size: 13px 13px, 100% 100%;
+            color: #455b49;
+        }
+
+        .halaman-dalam {
+            max-width: 1180px;
+            margin: auto;
+            padding: 65px 6vw 90px;
+            min-height: 65vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .halaman-dalam::before {
+            content: "🌼";
+            position: absolute;
+            top: 25px;
+            right: 7%;
+            font-size: 38px;
+            transform: rotate(12deg);
+            opacity: .85;
+        }
+
+        .halaman-dalam::after {
+            content: "✧";
+            position: absolute;
+            bottom: 25px;
+            left: 4%;
+            color: #c49b58;
+            font-size: 43px;
+        }
+
+        /* ===== JUDUL ===== */
+
+        .judul-halaman {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin-bottom: 24px;
+            font: 500 clamp(2.8rem, 6vw, 5rem)/1.02
+                'Cormorant Garamond', serif;
+            color: #354f3a;
+            transform: rotate(-1deg);
+        }
+
+        .judul-halaman em {
+            color: #b87886;
+            font-weight: 600;
+        }
+
+        .subjudul-halaman {
+            font: 2rem 'Sacramento', cursive;
+            color: #c98291;
+        }
+
+        .deskripsi-fasilitas {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 25px 0 45px;
+            padding: 17px 20px;
+            line-height: 1.9;
+            color: #687765;
+            background: #fffaf0;
+            border-left: 4px solid #d9a3ac;
+            box-shadow: 4px 5px 0 #d8c7ad;
+            transform: rotate(.5deg);
+        }
+
+        /* ===== DOODLE ===== */
+
+        .doodle-scrapbook {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .doodle-scrapbook span {
+            position: absolute;
+            display: block;
+            user-select: none;
+        }
+
+        .doodle-fasilitas span:nth-child(1) {
+            top: 175px;
+            right: 5%;
+            font-size: 30px;
+            transform: rotate(12deg);
+        }
+
+        .doodle-fasilitas span:nth-child(2) {
+            top: 330px;
+            left: 2%;
+            color: #d48d9b;
+            font-size: 35px;
+        }
+
+        .doodle-fasilitas span:nth-child(3) {
+            top: 500px;
+            right: 3%;
+            color: #55745b;
+            font-size: 30px;
+            transform: rotate(-12deg);
+        }
+
+        .doodle-fasilitas span:nth-child(4) {
+            top: 650px;
+            left: 3%;
+            color: #b87886;
+            font-size: 20px;
+        }
+
+        .doodle-fasilitas span:nth-child(5) {
+            top: 830px;
+            right: 4%;
+            font-size: 32px;
+        }
+
+        .doodle-fasilitas span:nth-child(6) {
+            top: 1000px;
+            left: 3%;
+            color: #d48d9b;
+            font-size: 35px;
+        }
+
+        .doodle-fasilitas span:nth-child(7) {
+            top: 1170px;
+            right: 5%;
+            color: #c49b58;
+            font-size: 33px;
+        }
+
+        .doodle-fasilitas span:nth-child(8) {
+            top: 1340px;
+            left: 4%;
+            color: #c49b58;
+            font-size: 35px;
+        }
+
+        .doodle-fasilitas span:nth-child(9) {
+            top: 1510px;
+            right: 4%;
+            color: #b87886;
+            font-size: 17px;
+        }
+
+        .doodle-fasilitas span:nth-child(10) {
+            top: 1680px;
+            left: 3%;
+            color: #b87886;
+            font-size: 30px;
+        }
+
+        /* ===== GRID FOTO ===== */
+
+        .grid-foto {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 34px;
+            margin: 50px 0 65px;
+            position: relative;
+            z-index: 1;
+            align-items: start;
+        }
+
+        /* ===== POLAROID ===== */
+
+        .polaroid {
+            position: relative;
+            min-width: 0;
+            margin: 0;
+            padding: 12px 12px 42px;
+            background: #fffdf7;
+            border: 1px solid #e9dfcd;
+            box-shadow:
+                3px 5px 0 #e6d4c3,
+                7px 11px 22px #263d2e1a;
+            transform: rotate(-3deg);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(3deg);
+        }
+
+        .polaroid:nth-child(3) {
+            transform: rotate(-2deg);
+        }
+
+        /* Washi tape */
+
+        .polaroid::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            width: 88px;
+            height: 25px;
+            background: #e9b8bdcf;
+            transform: translateX(-50%) rotate(-5deg);
+            z-index: 2;
+            clip-path: polygon(
+                3% 0, 100% 4%, 96% 100%, 0 94%
+            );
+        }
+
+        .polaroid:nth-child(2)::before {
+            background: #c6d4b8df;
+            transform: translateX(-50%) rotate(4deg);
+        }
+
+        .polaroid:nth-child(3)::before {
+            background: #e7d39edf;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-6px);
+            box-shadow:
+                5px 8px 0 #e6d4c3,
+                8px 15px 25px #263d2e20;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #eee5d9;
+        }
+
+        .polaroid figcaption {
+            font: 1.7rem 'Sacramento', cursive;
+            text-align: center;
+            color: #55745b;
+            padding-top: 12px;
+        }
+
+        /* Stiker pada foto */
+
+        .stiker-foto {
+            position: absolute;
+            right: -13px;
+            bottom: 12px;
+            z-index: 2;
+            font-size: 27px;
+            transform: rotate(12deg);
+        }
+
+        /* ===== KERTAS SOBEK ===== */
+
+        .kertas-sobek {
+            position: relative;
+            z-index: 1;
+            margin: 0 5px;
+            padding: 35px 32px;
+            background-color: #fffaf0;
+            background-image:
+                radial-gradient(#dfd2bd 0.6px, transparent 0.6px);
+            background-size: 10px 10px;
+            border: 1px solid #e6d8c1;
+            box-shadow: 7px 9px 0 #d9c4ad;
+            clip-path: polygon(
+                0 2%, 5% 0, 10% 2%, 15% 0, 20% 2%,
+                25% 0, 30% 2%, 35% 0, 40% 2%, 45% 0,
+                50% 2%, 55% 0, 60% 2%, 65% 0, 70% 2%,
+                75% 0, 80% 2%, 85% 0, 90% 2%, 95% 0,
+                100% 2%, 100% 98%, 95% 100%, 90% 98%,
+                85% 100%, 80% 98%, 75% 100%, 70% 98%,
+                65% 100%, 60% 98%, 55% 100%, 50% 98%,
+                45% 100%, 40% 98%, 35% 100%, 30% 98%,
+                25% 100%, 20% 98%, 15% 100%, 10% 98%,
+                5% 100%, 0 98%
+            );
+        }
+
+        .kertas-sobek::before {
+            content: "📌";
+            position: absolute;
+            top: 9px;
+            right: 25px;
+            font-size: 25px;
+            transform: rotate(12deg);
+        }
+
+        .kertas-sobek h2 {
+            margin: 0 0 16px;
+            color: #55745b;
+            font: 600 clamp(2rem, 4vw, 2.8rem)/1.2
+                'Cormorant Garamond', serif;
+        }
+
+        .kertas-sobek p {
+            line-height: 1.9;
+            color: #657365;
+        }
+
+        /* Catatan kecil di kertas */
+
+        .catatan-kecil {
+            display: block;
+            margin-top: 18px;
+            color: #b87886;
+            font: 1.6rem 'Sacramento', cursive;
+        }
+
+        /* ===== FOOTER ===== */
+
+        .kaki-situs {
+            position: relative;
+            background: #e7ecdf;
+            border-top: 2px dashed #c4cdb9;
+        }
+
+        .kaki-situs::before {
+            content: "✿ ୨୧ ✿ ୨୧ ✿";
+            display: block;
+            text-align: center;
+            padding-top: 18px;
+            color: #b87886;
+            letter-spacing: 8px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width: 850px) {
+            .grid-foto {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 35px 25px;
+            }
+
+            .polaroid:nth-child(3) {
+                grid-column: 1 / -1;
+                width: min(100%, 330px);
+                justify-self: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .halaman-dalam {
+                padding: 42px 5vw 65px;
+            }
+
+            .judul-halaman {
+                font-size: clamp(2.6rem, 12vw, 4rem);
+            }
+
+            .grid-foto {
+                grid-template-columns: 1fr;
+                gap: 42px;
+                padding: 10px 8px;
+            }
+
+            .polaroid,
+            .polaroid:nth-child(2),
+            .polaroid:nth-child(3) {
+                width: min(100%, 340px);
+                justify-self: center;
+            }
+
+            .polaroid img {
+                height: 210px;
+            }
+
+            .kertas-sobek {
+                margin: 0;
+                padding: 30px 23px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .polaroid {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="pita-atas">
+        ✿ Tumbuh bersama, menginspirasi sesama ✿
+    </div>
+
+    <header class="kepala-situs">
+
+        <a class="identitas" href="beranda.html">
+            <span class="logo-sekolah">
+                <span>NH</span>
+                <i>✿</i>
+            </span>
+
+            <span class="identitas-teks">
+                <strong>SMPIT Nurhidayah</strong>
+                <small>Berilmu • Berakhlak • Mandiri</small>
+            </span>
+        </a>
+
+        <button
+            class="tombol-menu"
+            id="tombolMenu"
+            aria-label="Buka navigasi"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="navigasi" id="navigasiUtama">
+            <a class="tautan-nav" href="beranda.html">Beranda</a>
+            <a class="tautan-nav" href="profil.html">Profil</a>
+            <a class="tautan-nav" href="fasilitas.html">Fasilitas</a>
+            <a class="tautan-nav" href="kegiatan.html">Kegiatan</a>
+            <a class="tautan-nav" href="kontak.html">Kontak</a>
+        </nav>
+
+        <a class="tombol tombol-kecil kepala-cta" href="kontak.html">
+            Hubungi Kami ↗
+        </a>
+
+    </header>
+
+    <main class="halaman-dalam">
+
+        <div class="doodle-scrapbook doodle-fasilitas" aria-hidden="true">
+            <span>🍃</span>
+            <span>✿</span>
+            <span>♧</span>
+            <span>&gt;_&lt;</span>
+            <span>🌼</span>
+            <span>♡</span>
+            <span>❀</span>
+            <span>✧</span>
+            <span>૮₍ ˶•⤙•˶ ₎ა</span>
+            <span>୨୧</span>
+        </div>
+
+        <h1 class="judul-halaman">
+            Ruang belajar untuk
+            <em>tumbuh dan berkarya.</em>
+        </h1>
+
+        <p class="deskripsi-fasilitas">
+            🍃 Kenali fasilitas pendukung pembelajaran. Foto berikut
+            masih berupa ilustrasi dan dapat diganti dengan foto
+            asli sekolah.
+        </p>
+
+        <div class="grid-foto">
+
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+                    alt="Ruang kelas"
+                >
+                <figcaption>Ruang kelas ✿</figcaption>
+                <span class="stiker-foto" aria-hidden="true">🌼</span>
+            </figure>
+
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=80"
+                    alt="Perpustakaan"
+                >
+                <figcaption>Perpustakaan ♡</figcaption>
+                <span class="stiker-foto" aria-hidden="true">📚</span>
+            </figure>
+
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80"
+                    alt="Area belajar"
+                >
+                <figcaption>Area belajar ♡</figcaption>
+                <span class="stiker-foto" aria-hidden="true">🎀</span>
+            </figure>
+
+        </div>
+
+        <section class="kertas-sobek">
+            <h2>Fasilitas yang mendukung ✧</h2>
+
+            <p>
+                Tambahkan informasi ruang kelas, perpustakaan,
+                area ibadah, ruang kegiatan, dan fasilitas lain
+                sesuai kondisi nyata sekolah.
+            </p>
+
+            <span class="catatan-kecil">
+                Belajar, bertumbuh, dan bermimpi bersama ✿
+            </span>
+        </section>
+
+    </main>
+
+    <footer class="kaki-situs">
+        <div class="kaki-dalam">
+            <span>✿ SMPIT Nurhidayah</span>
+            <span>Berakhlak · Cerdas · Mandiri · Berprestasi</span>
+            <a href="beranda.html">Kembali ke beranda ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

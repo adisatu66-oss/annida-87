@@ -1,0 +1,241 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galeri — SMPIT Nurhidayah</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Nunito:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f5eb;
+            color: #344b3b;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .halaman-dalam {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 55px 25px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .judul-halaman {
+            width: 100%;
+            max-width: 100%;
+            margin: 10px auto 15px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.7rem, 6vw, 4.5rem);
+            font-weight: 500;
+            color: #344b3b;
+            transform: rotate(-1deg);
+        }
+
+        .judul-halaman em {
+            color: #68816b;
+        }
+
+        .deskripsi-galeri {
+            max-width: 600px;
+            margin: 0 auto 35px;
+            color: #7b8276;
+            line-height: 1.8;
+        }
+
+        .hiasan-galeri {
+            color: #d99bad;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            letter-spacing: 12px;
+        }
+
+        .grid-foto {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 35px;
+            align-items: start;
+        }
+
+        .polaroid {
+            position: relative;
+            background: #fffdf7;
+            padding: 12px 12px 22px;
+            border: 1px solid #e9dfce;
+            box-shadow: 3px 5px 12px rgba(65, 72, 53, 0.10);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .polaroid:nth-child(1) {
+            transform: rotate(-2deg);
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(1.5deg);
+            margin-top: 18px;
+        }
+
+        .polaroid:nth-child(3) {
+            transform: rotate(-1deg);
+            margin-top: 5px;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) translateY(-7px);
+            box-shadow: 5px 12px 20px rgba(65, 72, 53, 0.15);
+        }
+
+        .polaroid::before {
+            content: " ";
+            position: absolute;
+            width: 75px;
+            height: 22px;
+            background: rgba(224, 184, 190, 0.55);
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-4deg);
+            z-index: 2;
+        }
+
+        .polaroid img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #e5e9d8;
+        }
+
+        .polaroid figcaption {
+            padding-top: 16px;
+            color: #61735d;
+            font-family: 'Sacramento', cursive;
+            font-size: 1.7rem;
+        }
+
+        .kaki-situs {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .grid-foto {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 24px;
+            }
+
+            .polaroid img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .halaman-dalam {
+                padding: 35px 20px 55px;
+            }
+
+            .grid-foto {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 360px;
+                margin: 35px auto 0;
+            }
+
+            .polaroid:nth-child(2),
+            .polaroid:nth-child(3) {
+                margin-top: 0;
+            }
+
+            .polaroid img {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pita-atas">
+        ✿ Cerita indah SMPIT Nurhidayah ✿
+    </div>
+
+    <header class="kepala-situs">
+        <a class="identitas" href="beranda.html">
+            <span class="logo-sekolah"><span>NH</span><i>✿</i></span>
+            <span class="identitas-teks">
+                <strong>SMPIT Nurhidayah</strong>
+                <small>Berilmu • Berakhlak • Mandiri</small>
+            </span>
+        </a>
+
+        <button class="tombol-menu" id="tombolMenu"
+                aria-label="Buka navigasi" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="navigasi" id="navigasiUtama">
+            <a class="tautan-nav" href="beranda.html">Beranda</a>
+            <a class="tautan-nav" href="profil.html">Profil</a>
+            <a class="tautan-nav" href="fasilitas.html">Fasilitas</a>
+            <a class="tautan-nav" href="kegiatan.html">Kegiatan</a>
+            <a class="tautan-nav" href="prestasi.html">Prestasi</a>
+            <a class="tautan-nav" href="galeri.html">Galeri</a>
+            <a class="tautan-nav" href="kontak.html">Kontak</a>
+        </nav>
+
+        <a class="tombol tombol-kecil kepala-cta" href="kontak.html">
+            Hubungi Kami ↗
+        </a>
+    </header>
+
+    <main class="halaman-dalam">
+        <h1 class="judul-halaman">Galeri <em>kenangan kami.</em></h1>
+
+        <p class="deskripsi-galeri">
+            Kumpulan momen, kegiatan, dan cerita seru keluarga SMPIT Nurhidayah.
+        </p>
+
+        <div class="hiasan-galeri">✧ ❀ ✧</div>
+
+        <div class="grid-foto">
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
+                    alt="Kegiatan belajar di sekolah"
+                    loading="lazy">
+                <figcaption>Kegiatan sekolah ✿</figcaption>
+            </figure>
+
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80"
+                    alt="Kebersamaan siswa"
+                    loading="lazy">
+                <figcaption>Kebersamaan ♡</figcaption>
+            </figure>
+
+            <figure class="polaroid">
+                <img
+                    src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80"
+                    alt="Belajar bersama di kelas"
+                    loading="lazy">
+                <figcaption>Belajar bersama ✧</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="kaki-situs">
+        <div class="kaki-dalam">
+            <span>✿ SMPIT Nurhidayah</span>
+            <span>Berakhlak · Cerdas · Mandiri · Berprestasi</span>
+            <a href="beranda.html">Kembali ke beranda ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
